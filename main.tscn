@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cfqalwx2pvvfq"]
+[gd_scene load_steps=24 format=3 uid="uid://cfqalwx2pvvfq"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_1flcn"]
 [ext_resource type="Texture2D" uid="uid://mhhjb4b3tlb6" path="res://icon.svg" id="1_wkqpt"]
@@ -11,7 +11,12 @@
 [ext_resource type="Texture2D" uid="uid://d0flad2shr8ct" path="res://art/plinkotitle.png" id="8_slvid"]
 [ext_resource type="Texture2D" uid="uid://b76i2w1khvlqb" path="res://art/gen.png" id="8_usbcs"]
 [ext_resource type="Texture2D" uid="uid://p38u2gl66uwk" path="res://art/gen2.png" id="9_8x73w"]
+[ext_resource type="FontFile" uid="uid://cm7cfugrmr87m" path="res://other assets/josefin-sans/JosefinSans-SemiBold.ttf" id="9_q8gt8"]
 [ext_resource type="Texture2D" uid="uid://cfpk7ogf2fsxj" path="res://art/list1.png" id="9_vsyko"]
+[ext_resource type="Texture2D" uid="uid://bnbsxpuausy3g" path="res://art/qst.png" id="12_ts5g2"]
+[ext_resource type="Texture2D" uid="uid://dq1h7mvu3gpll" path="res://art/qst2.png" id="13_o6s41"]
+[ext_resource type="PackedScene" uid="uid://bsejl3i375cc" path="res://tips.tscn" id="16_0bqwe"]
+[ext_resource type="AudioStream" uid="uid://fsrcptukvasp" path="res://other assets/ui_click.mp3" id="17_qh568"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lwsrb"]
 size = Vector2(801, 20)
@@ -25,11 +30,20 @@ height = 163.85
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t5l6n"]
 size = Vector2(725, 1074)
 
+[sub_resource type="LabelSettings" id="LabelSettings_2r2am"]
+font = ExtResource("9_q8gt8")
+font_size = 24
+font_color = Color(0.247059, 0.2, 0.192157, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cqn3a"]
+font = ExtResource("9_q8gt8")
+font_size = 48
+font_color = Color(0.247059, 0.2, 0.192157, 1)
+
 [node name="Main" type="Node2D"]
 script = ExtResource("1_1flcn")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_od1lp")
@@ -356,10 +370,12 @@ position = Vector2(1450, 1072)
 scale = Vector2(2, 2)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/SideWalls"]
+visible = false
 position = Vector2(16.0001, 0)
 polygon = PackedVector2Array(366.875, -527.694, 366.875, -447.694, 342.875, -367.694, 366.875, -287.694, 342.875, -207.694, 366.875, -127.694, 342.875, -39.6938, 366.875, 32.3062, 342.875, 112.306, 366.875, 192.306, 342.875, 280.306, 366.875, 352.306, 366.875, 520.306, 390.875, 520.306, 390.875, -527.694)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls/SideWalls"]
+visible = false
 position = Vector2(-24.0002, 0)
 scale = Vector2(-1, 1)
 polygon = PackedVector2Array(366.875, -527.694, 366.875, -447.694, 342.875, -367.694, 366.875, -287.694, 342.875, -207.694, 366.875, -127.694, 342.875, -39.6938, 366.875, 32.3062, 342.875, 112.306, 366.875, 192.306, 342.875, 280.306, 366.875, 352.306, 366.875, 520.306, 390.875, 520.306, 390.875, -527.694)
@@ -382,7 +398,7 @@ offset_left = 705.0
 offset_top = 37.0
 offset_right = 727.0
 offset_bottom = 908.0
-color = Color(0.247059, 0.2, 0.192157, 1)
+color = Color(0.12549, 0.54902, 0.439216, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Leftwall2"]
 position = Vector2(716, 513.606)
@@ -399,7 +415,7 @@ offset_left = 705.0
 offset_top = 37.0
 offset_right = 727.0
 offset_bottom = 908.0
-color = Color(0.247059, 0.2, 0.192157, 1)
+color = Color(0.12549, 0.54902, 0.439216, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Leftwall3"]
 position = Vector2(716, 513.606)
@@ -416,7 +432,7 @@ offset_left = 705.0
 offset_top = 37.0
 offset_right = 727.0
 offset_bottom = 908.0
-color = Color(0.247059, 0.2, 0.192157, 1)
+color = Color(0.12549, 0.54902, 0.439216, 1)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Leftwall4"]
 position = Vector2(716, 513.606)
@@ -433,7 +449,7 @@ offset_left = 705.0
 offset_top = 37.0
 offset_right = 727.0
 offset_bottom = 908.0
-color = Color(0.247059, 0.2, 0.192157, 1)
+color = Color(0.12549, 0.54902, 0.439216, 1)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Leftwall5"]
 position = Vector2(716, 513.606)
@@ -450,7 +466,7 @@ offset_left = 705.0
 offset_top = 37.0
 offset_right = 727.0
 offset_bottom = 908.0
-color = Color(0.247059, 0.2, 0.192157, 1)
+color = Color(0.12549, 0.54902, 0.439216, 1)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Leftwall6"]
 position = Vector2(716, 513.606)
@@ -467,7 +483,7 @@ offset_left = 705.0
 offset_top = 37.0
 offset_right = 727.0
 offset_bottom = 908.0
-color = Color(0.247059, 0.2, 0.192157, 1)
+color = Color(0.12549, 0.54902, 0.439216, 1)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Leftwall7"]
 position = Vector2(716, 513.606)
@@ -518,6 +534,7 @@ position = Vector2(1800, 990)
 position = Vector2(-67, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea"]
+visible = false
 position = Vector2(1520.5, 535)
 shape = SubResource("RectangleShape2D_t5l6n")
 
@@ -528,16 +545,25 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("6_oa7gg")
 
 [node name="Title" type="Sprite2D" parent="."]
-position = Vector2(496, 88)
+position = Vector2(496, 112)
 texture = ExtResource("8_slvid")
+
+[node name="Label" type="Label" parent="Title"]
+offset_left = -440.0
+offset_top = 48.0
+offset_right = 438.0
+offset_bottom = 75.0
+text = "simulating task management under the ADHD mind. fun and spontaneity made frustrating."
+label_settings = SubResource("LabelSettings_2r2am")
 
 [node name="Todo_List" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 64.0
-offset_top = 192.0
-offset_right = 64.0
-offset_bottom = 192.0
+offset_left = 112.0
+offset_top = 240.0
+offset_right = 112.0
+offset_bottom = 240.0
+scale = Vector2(0.9, 0.9)
 
 [node name="TextureRect" type="TextureRect" parent="Todo_List"]
 layout_mode = 0
@@ -548,19 +574,20 @@ texture = ExtResource("9_vsyko")
 
 [node name="V" type="VBoxContainer" parent="Todo_List"]
 layout_mode = 0
-offset_left = 40.0
+offset_left = 24.0
 offset_top = 96.0
-offset_right = 40.0
+offset_right = 24.0
 offset_bottom = 104.0
 theme_override_constants/separation = 90
 
 [node name="Done_List" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 520.0
-offset_top = 192.0
-offset_right = 520.0
-offset_bottom = 192.0
+offset_left = 544.0
+offset_top = 240.0
+offset_right = 544.0
+offset_bottom = 240.0
+scale = Vector2(0.9, 0.9)
 
 [node name="TextureRect" type="TextureRect" parent="Done_List"]
 layout_mode = 0
@@ -571,20 +598,50 @@ texture = ExtResource("8_qoc2o")
 
 [node name="V" type="VBoxContainer" parent="Done_List"]
 layout_mode = 0
-offset_left = 32.0
+offset_left = 16.0
 offset_top = 96.0
-offset_right = 32.0
+offset_right = 16.0
 offset_bottom = 104.0
 theme_override_constants/separation = 90
 
+[node name="Info" type="TextureButton" parent="."]
+offset_left = 869.0
+offset_top = 92.0
+offset_right = 949.0
+offset_bottom = 172.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("12_ts5g2")
+texture_pressed = ExtResource("13_o6s41")
+texture_hover = ExtResource("13_o6s41")
+
 [node name="Generate" type="TextureButton" parent="."]
-offset_left = 56.0
-offset_top = 976.0
-offset_right = 476.0
-offset_bottom = 1056.0
+offset_left = 96.0
+offset_top = 960.0
+offset_right = 516.0
+offset_bottom = 1040.0
+scale = Vector2(0.9, 0.9)
 texture_normal = ExtResource("8_usbcs")
 texture_pressed = ExtResource("8_usbcs")
 texture_hover = ExtResource("9_8x73w")
+
+[node name="Plinkocount" type="Sprite2D" parent="."]
+position = Vector2(576, 998)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("6_oa7gg")
+
+[node name="Label" type="Label" parent="Plinkocount"]
+offset_left = 60.0
+offset_top = -20.0
+offset_right = 340.0
+offset_bottom = 31.0
+text = "energy left:"
+label_settings = SubResource("LabelSettings_cqn3a")
+
+[node name="Tips" parent="." instance=ExtResource("16_0bqwe")]
+visible = false
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_qh568")
 
 [connection signal="landed" from="Cells/Cell" to="." method="_on_cell_landed"]
 [connection signal="landed" from="Cells/Cell2" to="." method="_on_cell_landed"]
@@ -595,4 +652,5 @@ texture_hover = ExtResource("9_8x73w")
 [connection signal="landed" from="Cells/Cell7" to="." method="_on_cell_landed"]
 [connection signal="mouse_entered" from="MouseArea" to="." method="_on_mouse_area_mouse_entered"]
 [connection signal="mouse_exited" from="MouseArea" to="." method="_on_mouse_area_mouse_exited"]
+[connection signal="pressed" from="Info" to="." method="_on_info_pressed"]
 [connection signal="pressed" from="Generate" to="." method="_on_generate_pressed"]

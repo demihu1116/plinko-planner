@@ -7,7 +7,6 @@
 [sub_resource type="LabelSettings" id="LabelSettings_mki4t"]
 font = ExtResource("3_osq5t")
 font_size = 48
-font_color = Color(0.247059, 0.2, 0.192157, 1)
 
 [node name="DoneItem" type="Control"]
 layout_mode = 3

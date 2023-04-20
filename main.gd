@@ -39,7 +39,8 @@ func _ready():
 		current_cell.activity = celltext[i]
 		
 		current_cell.get_node("L/Label").text = celltext[i]
-
+		
+	$Plinkocount/Label.text = "energy left: " + str(plinko_count)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if drop:
@@ -51,8 +52,10 @@ func _process(delta):
 			instance.position = Vector2(get_global_mouse_position().x, 80)
 
 			plinko_count -= 1
+			
+			$Plinkocount/Label.text = "energy left: " + str(plinko_count)
 		else:  # if plinkos are out
-			pass
+			$Plinkocount/Label.text = "no energy left!"
 #			print("aaaaaa")
 #			print(todo_comp.size())
 #			print(done_comp.size())
@@ -111,7 +114,7 @@ func _on_mouse_area_mouse_exited():
 
 
 func _on_generate_pressed():
-	
+	$Click.play()
 	gen = true 
 	todo_comp = []
 	done_comp = []
@@ -129,6 +132,7 @@ func _on_generate_pressed():
 	dayended = false
 	plinko_count = 7
 	drop = false
+	$Plinkocount/Label.text = "energy left: " + str(plinko_count)
 	
 	for i in range(0, 7):
 		var act_index = rng.randf_range(0, activities.size())
@@ -139,3 +143,8 @@ func _on_generate_pressed():
 		
 	await get_tree().create_timer(2).timeout
 	gen = false
+
+
+func _on_info_pressed():
+	$Tips.show()
+	$Click.play()

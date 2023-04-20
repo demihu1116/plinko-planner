@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bsejl3i375cc"]
+[gd_scene load_steps=5 format=3 uid="uid://bsejl3i375cc"]
 
+[ext_resource type="Script" path="res://tips.gd" id="1_ejafa"]
 [ext_resource type="Texture2D" uid="uid://c7ay7u8ri5onh" path="res://art/square.png" id="1_g8ndd"]
+[ext_resource type="AudioStream" uid="uid://fsrcptukvasp" path="res://other assets/ui_click.mp3" id="3_gi774"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rywg6"]
 blend_mode = 3
@@ -9,9 +11,10 @@ blend_mode = 3
 layout_mode = 3
 anchors_preset = 0
 size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_ejafa")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-modulate = Color(1, 1, 1, 0.380392)
 material = SubResource("CanvasItemMaterial_rywg6")
 layout_mode = 0
 offset_right = 1920.0
@@ -19,10 +22,23 @@ offset_bottom = 1080.0
 color = Color(0.858824, 0.819608, 0.819608, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 528.0
-offset_top = 88.0
-offset_right = 1406.0
-offset_bottom = 966.0
+offset_left = 520.0
+offset_top = 120.0
+offset_right = 1398.0
+offset_bottom = 998.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("1_g8ndd")
+
+[node name="Close" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1336.0
+offset_top = 112.0
+offset_right = 1392.0
+offset_bottom = 168.0
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_gi774")
+
+[connection signal="pressed" from="Close" to="." method="_on_close_pressed"]
