@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsejl3i375cc"]
+
+[ext_resource type="Texture2D" uid="uid://c7ay7u8ri5onh" path="res://art/square.png" id="1_g8ndd"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rywg6"]
+blend_mode = 3
+
+[node name="Tips" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.380392)
+material = SubResource("CanvasItemMaterial_rywg6")
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.858824, 0.819608, 0.819608, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 528.0
+offset_top = 88.0
+offset_right = 1406.0
+offset_bottom = 966.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_g8ndd")

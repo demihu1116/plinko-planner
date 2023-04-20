@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddtp2koras42n"]
+
+[ext_resource type="Script" path="res://cell.gd" id="1_gq55a"]
+[ext_resource type="FontFile" uid="uid://cm7cfugrmr87m" path="res://other assets/josefin-sans/JosefinSans-SemiBold.ttf" id="2_srrjr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1ett"]
+size = Vector2(16.5227, 20.0994)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2gmg4"]
+font = ExtResource("2_srrjr")
+font_size = 48
+font_color = Color(0.247059, 0.2, 0.192157, 1)
+
+[node name="Cell" type="Node2D"]
+script = ExtResource("1_gq55a")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(52, 31.9474)
+scale = Vector2(3.38928, 3.17894)
+shape = SubResource("RectangleShape2D_d1ett")
+
+[node name="L" type="Node2D" parent="."]
+position = Vector2(13, 0)
+scale = Vector2(0.5, 0.5)
+
+[node name="Label" type="Label" parent="L"]
+offset_right = 166.0
+offset_bottom = 51.0
+text = "Example"
+label_settings = SubResource("LabelSettings_2gmg4")
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

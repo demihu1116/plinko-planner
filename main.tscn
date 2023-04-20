@@ -1,0 +1,598 @@
+[gd_scene load_steps=17 format=3 uid="uid://cfqalwx2pvvfq"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_1flcn"]
+[ext_resource type="Texture2D" uid="uid://mhhjb4b3tlb6" path="res://icon.svg" id="1_wkqpt"]
+[ext_resource type="Texture2D" uid="uid://ctyj0i4elfgvj" path="res://art/plinko_bg.png" id="2_od1lp"]
+[ext_resource type="PackedScene" uid="uid://c50pcd8lklypi" path="res://peg.tscn" id="2_pb48o"]
+[ext_resource type="Texture2D" uid="uid://4g3yjxakix8r" path="res://art/walls.png" id="4_xotqe"]
+[ext_resource type="PackedScene" uid="uid://ddtp2koras42n" path="res://cell.tscn" id="5_hmsp5"]
+[ext_resource type="Texture2D" uid="uid://b0rgjgrkvj1rl" path="res://art/plinko.png" id="6_oa7gg"]
+[ext_resource type="Texture2D" uid="uid://cqdqoaw6j8po4" path="res://art/list2.png" id="8_qoc2o"]
+[ext_resource type="Texture2D" uid="uid://d0flad2shr8ct" path="res://art/plinkotitle.png" id="8_slvid"]
+[ext_resource type="Texture2D" uid="uid://b76i2w1khvlqb" path="res://art/gen.png" id="8_usbcs"]
+[ext_resource type="Texture2D" uid="uid://p38u2gl66uwk" path="res://art/gen2.png" id="9_8x73w"]
+[ext_resource type="Texture2D" uid="uid://cfpk7ogf2fsxj" path="res://art/list1.png" id="9_vsyko"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwsrb"]
+size = Vector2(801, 20)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_18d8i"]
+radius = 11.26
+height = 163.85
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dsbi6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t5l6n"]
+size = Vector2(725, 1074)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_1flcn")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_od1lp")
+
+[node name="Pegboard" type="Node2D" parent="."]
+position = Vector2(733, 0)
+scale = Vector2(0.5, 0.5)
+
+[node name="Row2" type="Node2D" parent="Pegboard"]
+position = Vector2(80, 160)
+
+[node name="Peg" parent="Pegboard/Row2" instance=ExtResource("2_pb48o")]
+position = Vector2(800, 200)
+
+[node name="Peg2" parent="Pegboard/Row2" instance=ExtResource("2_pb48o")]
+position = Vector2(960, 200)
+
+[node name="Peg3" parent="Pegboard/Row2" instance=ExtResource("2_pb48o")]
+position = Vector2(1120, 200)
+
+[node name="Peg4" parent="Pegboard/Row2" instance=ExtResource("2_pb48o")]
+position = Vector2(1280, 200)
+
+[node name="Peg5" parent="Pegboard/Row2" instance=ExtResource("2_pb48o")]
+position = Vector2(1440, 200)
+
+[node name="Peg6" parent="Pegboard/Row2" instance=ExtResource("2_pb48o")]
+position = Vector2(1600, 200)
+
+[node name="Peg7" parent="Pegboard/Row2" instance=ExtResource("2_pb48o")]
+position = Vector2(1760, 200)
+
+[node name="Peg8" parent="Pegboard/Row2" instance=ExtResource("2_pb48o")]
+position = Vector2(1920, 200)
+
+[node name="Row3" type="Node2D" parent="Pegboard"]
+position = Vector2(0, 320)
+
+[node name="Peg" parent="Pegboard/Row3" instance=ExtResource("2_pb48o")]
+position = Vector2(800, 200)
+
+[node name="Peg2" parent="Pegboard/Row3" instance=ExtResource("2_pb48o")]
+position = Vector2(960, 200)
+
+[node name="Peg3" parent="Pegboard/Row3" instance=ExtResource("2_pb48o")]
+position = Vector2(1120, 200)
+
+[node name="Peg4" parent="Pegboard/Row3" instance=ExtResource("2_pb48o")]
+position = Vector2(1280, 200)
+
+[node name="Peg5" parent="Pegboard/Row3" instance=ExtResource("2_pb48o")]
+position = Vector2(1440, 200)
+
+[node name="Peg6" parent="Pegboard/Row3" instance=ExtResource("2_pb48o")]
+position = Vector2(1600, 200)
+
+[node name="Peg7" parent="Pegboard/Row3" instance=ExtResource("2_pb48o")]
+position = Vector2(1760, 200)
+
+[node name="Peg8" parent="Pegboard/Row3" instance=ExtResource("2_pb48o")]
+position = Vector2(1920, 200)
+
+[node name="Peg9" parent="Pegboard/Row3" instance=ExtResource("2_pb48o")]
+position = Vector2(2080, 200)
+
+[node name="Row4" type="Node2D" parent="Pegboard"]
+position = Vector2(80, 480)
+
+[node name="Peg" parent="Pegboard/Row4" instance=ExtResource("2_pb48o")]
+position = Vector2(800, 200)
+
+[node name="Peg2" parent="Pegboard/Row4" instance=ExtResource("2_pb48o")]
+position = Vector2(960, 200)
+
+[node name="Peg3" parent="Pegboard/Row4" instance=ExtResource("2_pb48o")]
+position = Vector2(1120, 200)
+
+[node name="Peg4" parent="Pegboard/Row4" instance=ExtResource("2_pb48o")]
+position = Vector2(1280, 200)
+
+[node name="Peg5" parent="Pegboard/Row4" instance=ExtResource("2_pb48o")]
+position = Vector2(1440, 200)
+
+[node name="Peg6" parent="Pegboard/Row4" instance=ExtResource("2_pb48o")]
+position = Vector2(1600, 200)
+
+[node name="Peg7" parent="Pegboard/Row4" instance=ExtResource("2_pb48o")]
+position = Vector2(1760, 200)
+
+[node name="Peg8" parent="Pegboard/Row4" instance=ExtResource("2_pb48o")]
+position = Vector2(1920, 200)
+
+[node name="Row5" type="Node2D" parent="Pegboard"]
+position = Vector2(0, 640)
+
+[node name="Peg" parent="Pegboard/Row5" instance=ExtResource("2_pb48o")]
+position = Vector2(800, 200)
+
+[node name="Peg2" parent="Pegboard/Row5" instance=ExtResource("2_pb48o")]
+position = Vector2(960, 200)
+
+[node name="Peg3" parent="Pegboard/Row5" instance=ExtResource("2_pb48o")]
+position = Vector2(1120, 200)
+
+[node name="Peg4" parent="Pegboard/Row5" instance=ExtResource("2_pb48o")]
+position = Vector2(1280, 200)
+
+[node name="Peg5" parent="Pegboard/Row5" instance=ExtResource("2_pb48o")]
+position = Vector2(1440, 200)
+
+[node name="Peg6" parent="Pegboard/Row5" instance=ExtResource("2_pb48o")]
+position = Vector2(1600, 200)
+
+[node name="Peg7" parent="Pegboard/Row5" instance=ExtResource("2_pb48o")]
+position = Vector2(1760, 200)
+
+[node name="Peg8" parent="Pegboard/Row5" instance=ExtResource("2_pb48o")]
+position = Vector2(1920, 200)
+
+[node name="Peg9" parent="Pegboard/Row5" instance=ExtResource("2_pb48o")]
+position = Vector2(2080, 200)
+
+[node name="Row6" type="Node2D" parent="Pegboard"]
+position = Vector2(80, 800)
+
+[node name="Peg" parent="Pegboard/Row6" instance=ExtResource("2_pb48o")]
+position = Vector2(800, 200)
+
+[node name="Peg2" parent="Pegboard/Row6" instance=ExtResource("2_pb48o")]
+position = Vector2(960, 200)
+
+[node name="Peg3" parent="Pegboard/Row6" instance=ExtResource("2_pb48o")]
+position = Vector2(1120, 200)
+
+[node name="Peg4" parent="Pegboard/Row6" instance=ExtResource("2_pb48o")]
+position = Vector2(1280, 200)
+
+[node name="Peg5" parent="Pegboard/Row6" instance=ExtResource("2_pb48o")]
+position = Vector2(1440, 200)
+
+[node name="Peg6" parent="Pegboard/Row6" instance=ExtResource("2_pb48o")]
+position = Vector2(1600, 200)
+
+[node name="Peg7" parent="Pegboard/Row6" instance=ExtResource("2_pb48o")]
+position = Vector2(1760, 200)
+
+[node name="Peg8" parent="Pegboard/Row6" instance=ExtResource("2_pb48o")]
+position = Vector2(1920, 200)
+
+[node name="Row7" type="Node2D" parent="Pegboard"]
+position = Vector2(0, 960)
+
+[node name="Peg" parent="Pegboard/Row7" instance=ExtResource("2_pb48o")]
+position = Vector2(800, 200)
+
+[node name="Peg2" parent="Pegboard/Row7" instance=ExtResource("2_pb48o")]
+position = Vector2(960, 200)
+
+[node name="Peg3" parent="Pegboard/Row7" instance=ExtResource("2_pb48o")]
+position = Vector2(1120, 200)
+
+[node name="Peg4" parent="Pegboard/Row7" instance=ExtResource("2_pb48o")]
+position = Vector2(1280, 200)
+
+[node name="Peg5" parent="Pegboard/Row7" instance=ExtResource("2_pb48o")]
+position = Vector2(1440, 200)
+
+[node name="Peg6" parent="Pegboard/Row7" instance=ExtResource("2_pb48o")]
+position = Vector2(1600, 200)
+
+[node name="Peg7" parent="Pegboard/Row7" instance=ExtResource("2_pb48o")]
+position = Vector2(1760, 200)
+
+[node name="Row8" type="Node2D" parent="Pegboard"]
+position = Vector2(0, 960)
+
+[node name="Peg" parent="Pegboard/Row8" instance=ExtResource("2_pb48o")]
+position = Vector2(800, 200)
+
+[node name="Peg2" parent="Pegboard/Row8" instance=ExtResource("2_pb48o")]
+position = Vector2(960, 200)
+
+[node name="Peg3" parent="Pegboard/Row8" instance=ExtResource("2_pb48o")]
+position = Vector2(1120, 200)
+
+[node name="Peg4" parent="Pegboard/Row8" instance=ExtResource("2_pb48o")]
+position = Vector2(1280, 200)
+
+[node name="Peg5" parent="Pegboard/Row8" instance=ExtResource("2_pb48o")]
+position = Vector2(1440, 200)
+
+[node name="Peg6" parent="Pegboard/Row8" instance=ExtResource("2_pb48o")]
+position = Vector2(1600, 200)
+
+[node name="Peg7" parent="Pegboard/Row8" instance=ExtResource("2_pb48o")]
+position = Vector2(1760, 200)
+
+[node name="Peg8" parent="Pegboard/Row8" instance=ExtResource("2_pb48o")]
+position = Vector2(1920, 200)
+
+[node name="Peg9" parent="Pegboard/Row8" instance=ExtResource("2_pb48o")]
+position = Vector2(2080, 200)
+
+[node name="Row9" type="Node2D" parent="Pegboard"]
+position = Vector2(80, 1120)
+
+[node name="Peg" parent="Pegboard/Row9" instance=ExtResource("2_pb48o")]
+position = Vector2(800, 200)
+
+[node name="Peg2" parent="Pegboard/Row9" instance=ExtResource("2_pb48o")]
+position = Vector2(960, 200)
+
+[node name="Peg3" parent="Pegboard/Row9" instance=ExtResource("2_pb48o")]
+position = Vector2(1120, 200)
+
+[node name="Peg4" parent="Pegboard/Row9" instance=ExtResource("2_pb48o")]
+position = Vector2(1280, 200)
+
+[node name="Peg5" parent="Pegboard/Row9" instance=ExtResource("2_pb48o")]
+position = Vector2(1440, 200)
+
+[node name="Peg6" parent="Pegboard/Row9" instance=ExtResource("2_pb48o")]
+position = Vector2(1600, 200)
+
+[node name="Peg7" parent="Pegboard/Row9" instance=ExtResource("2_pb48o")]
+position = Vector2(1760, 200)
+
+[node name="Peg8" parent="Pegboard/Row9" instance=ExtResource("2_pb48o")]
+position = Vector2(1920, 200)
+
+[node name="Row10" type="Node2D" parent="Pegboard"]
+position = Vector2(0, 1280)
+
+[node name="Peg" parent="Pegboard/Row10" instance=ExtResource("2_pb48o")]
+position = Vector2(800, 200)
+
+[node name="Peg2" parent="Pegboard/Row10" instance=ExtResource("2_pb48o")]
+position = Vector2(960, 200)
+
+[node name="Peg3" parent="Pegboard/Row10" instance=ExtResource("2_pb48o")]
+position = Vector2(1120, 200)
+
+[node name="Peg4" parent="Pegboard/Row10" instance=ExtResource("2_pb48o")]
+position = Vector2(1280, 200)
+
+[node name="Peg5" parent="Pegboard/Row10" instance=ExtResource("2_pb48o")]
+position = Vector2(1440, 200)
+
+[node name="Peg6" parent="Pegboard/Row10" instance=ExtResource("2_pb48o")]
+position = Vector2(1600, 200)
+
+[node name="Peg7" parent="Pegboard/Row10" instance=ExtResource("2_pb48o")]
+position = Vector2(1760, 200)
+
+[node name="Peg8" parent="Pegboard/Row10" instance=ExtResource("2_pb48o")]
+position = Vector2(1920, 200)
+
+[node name="Peg9" parent="Pegboard/Row10" instance=ExtResource("2_pb48o")]
+position = Vector2(2080, 200)
+
+[node name="Row11" type="Node2D" parent="Pegboard"]
+position = Vector2(80, 1440)
+
+[node name="Peg" parent="Pegboard/Row11" instance=ExtResource("2_pb48o")]
+position = Vector2(800, 200)
+
+[node name="Peg2" parent="Pegboard/Row11" instance=ExtResource("2_pb48o")]
+position = Vector2(960, 200)
+
+[node name="Peg3" parent="Pegboard/Row11" instance=ExtResource("2_pb48o")]
+position = Vector2(1120, 200)
+
+[node name="Peg4" parent="Pegboard/Row11" instance=ExtResource("2_pb48o")]
+position = Vector2(1280, 200)
+
+[node name="Peg5" parent="Pegboard/Row11" instance=ExtResource("2_pb48o")]
+position = Vector2(1440, 200)
+
+[node name="Peg6" parent="Pegboard/Row11" instance=ExtResource("2_pb48o")]
+position = Vector2(1600, 200)
+
+[node name="Peg7" parent="Pegboard/Row11" instance=ExtResource("2_pb48o")]
+position = Vector2(1760, 200)
+
+[node name="Peg8" parent="Pegboard/Row11" instance=ExtResource("2_pb48o")]
+position = Vector2(1920, 200)
+
+[node name="Row12" type="Node2D" parent="Pegboard"]
+position = Vector2(0, 1600)
+
+[node name="Peg" parent="Pegboard/Row12" instance=ExtResource("2_pb48o")]
+position = Vector2(800, 200)
+
+[node name="Peg2" parent="Pegboard/Row12" instance=ExtResource("2_pb48o")]
+position = Vector2(960, 200)
+
+[node name="Peg3" parent="Pegboard/Row12" instance=ExtResource("2_pb48o")]
+position = Vector2(1120, 200)
+
+[node name="Peg4" parent="Pegboard/Row12" instance=ExtResource("2_pb48o")]
+position = Vector2(1280, 200)
+
+[node name="Peg5" parent="Pegboard/Row12" instance=ExtResource("2_pb48o")]
+position = Vector2(1440, 200)
+
+[node name="Peg6" parent="Pegboard/Row12" instance=ExtResource("2_pb48o")]
+position = Vector2(1600, 200)
+
+[node name="Peg7" parent="Pegboard/Row12" instance=ExtResource("2_pb48o")]
+position = Vector2(1760, 200)
+
+[node name="Peg8" parent="Pegboard/Row12" instance=ExtResource("2_pb48o")]
+position = Vector2(1920, 200)
+
+[node name="Peg9" parent="Pegboard/Row12" instance=ExtResource("2_pb48o")]
+position = Vector2(2080, 200)
+
+[node name="Walls" type="Node2D" parent="."]
+position = Vector2(733, 0)
+scale = Vector2(0.5, 0.5)
+
+[node name="SideWalls" type="StaticBody2D" parent="Walls"]
+position = Vector2(1450, 1072)
+scale = Vector2(2, 2)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/SideWalls"]
+position = Vector2(16.0001, 0)
+polygon = PackedVector2Array(366.875, -527.694, 366.875, -447.694, 342.875, -367.694, 366.875, -287.694, 342.875, -207.694, 366.875, -127.694, 342.875, -39.6938, 366.875, 32.3062, 342.875, 112.306, 366.875, 192.306, 342.875, 280.306, 366.875, 352.306, 366.875, 520.306, 390.875, 520.306, 390.875, -527.694)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls/SideWalls"]
+position = Vector2(-24.0002, 0)
+scale = Vector2(-1, 1)
+polygon = PackedVector2Array(366.875, -527.694, 366.875, -447.694, 342.875, -367.694, 366.875, -287.694, 342.875, -207.694, 366.875, -127.694, 342.875, -39.6938, 366.875, 32.3062, 342.875, 112.306, 366.875, 192.306, 342.875, 280.306, 366.875, 352.306, 366.875, 520.306, 390.875, 520.306, 390.875, -527.694)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/SideWalls"]
+position = Vector2(-0.500244, 520)
+shape = SubResource("RectangleShape2D_lwsrb")
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/SideWalls"]
+position = Vector2(-4.00012, 24)
+texture = ExtResource("4_xotqe")
+
+[node name="Leftwall2" type="RigidBody2D" parent="Walls"]
+position = Vector2(80, 1920)
+scale = Vector2(1.12, 0.218066)
+freeze = true
+
+[node name="ColorRect" type="ColorRect" parent="Walls/Leftwall2"]
+offset_left = 705.0
+offset_top = 37.0
+offset_right = 727.0
+offset_bottom = 908.0
+color = Color(0.247059, 0.2, 0.192157, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Leftwall2"]
+position = Vector2(716, 513.606)
+scale = Vector2(1, 6)
+shape = SubResource("CapsuleShape2D_18d8i")
+
+[node name="Leftwall3" type="RigidBody2D" parent="Walls"]
+position = Vector2(320, 1920)
+scale = Vector2(1.12, 0.218066)
+freeze = true
+
+[node name="ColorRect" type="ColorRect" parent="Walls/Leftwall3"]
+offset_left = 705.0
+offset_top = 37.0
+offset_right = 727.0
+offset_bottom = 908.0
+color = Color(0.247059, 0.2, 0.192157, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Leftwall3"]
+position = Vector2(716, 513.606)
+scale = Vector2(1, 6)
+shape = SubResource("CapsuleShape2D_18d8i")
+
+[node name="Leftwall4" type="RigidBody2D" parent="Walls"]
+position = Vector2(544, 1920)
+scale = Vector2(1.12, 0.218066)
+freeze = true
+
+[node name="ColorRect" type="ColorRect" parent="Walls/Leftwall4"]
+offset_left = 705.0
+offset_top = 37.0
+offset_right = 727.0
+offset_bottom = 908.0
+color = Color(0.247059, 0.2, 0.192157, 1)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Leftwall4"]
+position = Vector2(716, 513.606)
+scale = Vector2(1, 6)
+shape = SubResource("CapsuleShape2D_18d8i")
+
+[node name="Leftwall5" type="RigidBody2D" parent="Walls"]
+position = Vector2(752, 1920)
+scale = Vector2(1.12, 0.218066)
+freeze = true
+
+[node name="ColorRect" type="ColorRect" parent="Walls/Leftwall5"]
+offset_left = 705.0
+offset_top = 37.0
+offset_right = 727.0
+offset_bottom = 908.0
+color = Color(0.247059, 0.2, 0.192157, 1)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Leftwall5"]
+position = Vector2(716, 513.606)
+scale = Vector2(1, 6)
+shape = SubResource("CapsuleShape2D_18d8i")
+
+[node name="Leftwall6" type="RigidBody2D" parent="Walls"]
+position = Vector2(960, 1920)
+scale = Vector2(1.12, 0.218066)
+freeze = true
+
+[node name="ColorRect" type="ColorRect" parent="Walls/Leftwall6"]
+offset_left = 705.0
+offset_top = 37.0
+offset_right = 727.0
+offset_bottom = 908.0
+color = Color(0.247059, 0.2, 0.192157, 1)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Leftwall6"]
+position = Vector2(716, 513.606)
+scale = Vector2(1, 6)
+shape = SubResource("CapsuleShape2D_18d8i")
+
+[node name="Leftwall7" type="RigidBody2D" parent="Walls"]
+position = Vector2(1184, 1920)
+scale = Vector2(1.12, 0.218066)
+freeze = true
+
+[node name="ColorRect" type="ColorRect" parent="Walls/Leftwall7"]
+offset_left = 705.0
+offset_top = 37.0
+offset_right = 727.0
+offset_bottom = 908.0
+color = Color(0.247059, 0.2, 0.192157, 1)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Leftwall7"]
+position = Vector2(716, 513.606)
+scale = Vector2(1, 6)
+shape = SubResource("CapsuleShape2D_18d8i")
+
+[node name="Rightwall" type="RigidBody2D" parent="Walls"]
+visible = false
+position = Vector2(784, 34)
+scale = Vector2(2, 2)
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Rightwall"]
+position = Vector2(716, 555)
+scale = Vector2(1, 50)
+shape = SubResource("RectangleShape2D_dsbi6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/Rightwall"]
+position = Vector2(716, 535)
+scale = Vector2(0.126966, 8.12943)
+texture = ExtResource("1_wkqpt")
+
+[node name="Cells" type="Node2D" parent="."]
+position = Vector2(-67, 0)
+
+[node name="Cell" parent="Cells" instance=ExtResource("5_hmsp5")]
+position = Vector2(1136, 990)
+
+[node name="Cell2" parent="Cells" instance=ExtResource("5_hmsp5")]
+position = Vector2(1248, 990)
+
+[node name="Cell3" parent="Cells" instance=ExtResource("5_hmsp5")]
+position = Vector2(1365, 990)
+
+[node name="Cell4" parent="Cells" instance=ExtResource("5_hmsp5")]
+position = Vector2(1473, 990)
+
+[node name="Cell5" parent="Cells" instance=ExtResource("5_hmsp5")]
+position = Vector2(1576, 990)
+
+[node name="Cell6" parent="Cells" instance=ExtResource("5_hmsp5")]
+position = Vector2(1684, 990)
+
+[node name="Cell7" parent="Cells" instance=ExtResource("5_hmsp5")]
+position = Vector2(1800, 990)
+
+[node name="MouseArea" type="Area2D" parent="."]
+position = Vector2(-67, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea"]
+position = Vector2(1520.5, 535)
+shape = SubResource("RectangleShape2D_t5l6n")
+
+[node name="Preview" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(1133, 80)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("6_oa7gg")
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(496, 88)
+texture = ExtResource("8_slvid")
+
+[node name="Todo_List" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 64.0
+offset_top = 192.0
+offset_right = 64.0
+offset_bottom = 192.0
+
+[node name="TextureRect" type="TextureRect" parent="Todo_List"]
+layout_mode = 0
+offset_left = -16.0
+offset_right = 410.0
+offset_bottom = 774.0
+texture = ExtResource("9_vsyko")
+
+[node name="V" type="VBoxContainer" parent="Todo_List"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 96.0
+offset_right = 40.0
+offset_bottom = 104.0
+theme_override_constants/separation = 90
+
+[node name="Done_List" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 520.0
+offset_top = 192.0
+offset_right = 520.0
+offset_bottom = 192.0
+
+[node name="TextureRect" type="TextureRect" parent="Done_List"]
+layout_mode = 0
+offset_left = -8.0
+offset_right = 418.0
+offset_bottom = 774.0
+texture = ExtResource("8_qoc2o")
+
+[node name="V" type="VBoxContainer" parent="Done_List"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 96.0
+offset_right = 32.0
+offset_bottom = 104.0
+theme_override_constants/separation = 90
+
+[node name="Generate" type="TextureButton" parent="."]
+offset_left = 56.0
+offset_top = 976.0
+offset_right = 476.0
+offset_bottom = 1056.0
+texture_normal = ExtResource("8_usbcs")
+texture_pressed = ExtResource("8_usbcs")
+texture_hover = ExtResource("9_8x73w")
+
+[connection signal="landed" from="Cells/Cell" to="." method="_on_cell_landed"]
+[connection signal="landed" from="Cells/Cell2" to="." method="_on_cell_landed"]
+[connection signal="landed" from="Cells/Cell3" to="." method="_on_cell_landed"]
+[connection signal="landed" from="Cells/Cell4" to="." method="_on_cell_landed"]
+[connection signal="landed" from="Cells/Cell5" to="." method="_on_cell_landed"]
+[connection signal="landed" from="Cells/Cell6" to="." method="_on_cell_landed"]
+[connection signal="landed" from="Cells/Cell7" to="." method="_on_cell_landed"]
+[connection signal="mouse_entered" from="MouseArea" to="." method="_on_mouse_area_mouse_entered"]
+[connection signal="mouse_exited" from="MouseArea" to="." method="_on_mouse_area_mouse_exited"]
+[connection signal="pressed" from="Generate" to="." method="_on_generate_pressed"]

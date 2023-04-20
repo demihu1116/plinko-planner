@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cudoo1qhpr6gb"]
+
+[ext_resource type="Script" path="res://done_item.gd" id="1_7cp5g"]
+[ext_resource type="Texture2D" uid="uid://csl44d3xonxku" path="res://art/2_1.png" id="2_gv5vj"]
+[ext_resource type="FontFile" uid="uid://cm7cfugrmr87m" path="res://other assets/josefin-sans/JosefinSans-SemiBold.ttf" id="3_osq5t"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mki4t"]
+font = ExtResource("3_osq5t")
+font_size = 48
+font_color = Color(0.247059, 0.2, 0.192157, 1)
+
+[node name="DoneItem" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_7cp5g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(192, 36)
+scale = Vector2(1, 0.9)
+texture = ExtResource("2_gv5vj")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_right = 376.0
+offset_bottom = 72.0
+text = "done item"
+label_settings = SubResource("LabelSettings_mki4t")
+horizontal_alignment = 1
+vertical_alignment = 1

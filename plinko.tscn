@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://2m55rwchqdo0"]
+
+[ext_resource type="Script" path="res://plinko.gd" id="1_7v8tt"]
+[ext_resource type="Texture2D" uid="uid://b0rgjgrkvj1rl" path="res://art/plinko.png" id="2_1w3q8"]
+[ext_resource type="AudioStream" uid="uid://dc64c5l6bwf3m" path="res://other assets/tap.wav" id="3_37lcp"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_a8aou"]
+friction = 0.13
+bounce = 0.37
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5smwt"]
+
+[node name="Plinko" type="RigidBody2D" groups=["plinkos"]]
+scale = Vector2(0.279999, 0.279999)
+mass = 6.48
+physics_material_override = SubResource("PhysicsMaterial_a8aou")
+max_contacts_reported = 8
+contact_monitor = true
+script = ExtResource("1_7v8tt")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_1w3q8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2.1847, 2.47042)
+shape = SubResource("CircleShape2D_5smwt")
+
+[node name="Tap" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_37lcp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

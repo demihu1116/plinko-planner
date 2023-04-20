@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dewtpmfwuijn0"]
+
+[ext_resource type="Script" path="res://done_item.gd" id="1_m1qkg"]
+[ext_resource type="FontFile" uid="uid://cm7cfugrmr87m" path="res://other assets/josefin-sans/JosefinSans-SemiBold.ttf" id="3_gjs8f"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_i8455"]
+font = ExtResource("3_gjs8f")
+font_size = 48
+font_color = Color(0.247059, 0.2, 0.192157, 1)
+
+[node name="TodoItem" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_m1qkg")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 8.0
+offset_right = 320.0
+offset_bottom = 72.0
+text = "todo item"
+label_settings = SubResource("LabelSettings_i8455")
+horizontal_alignment = 1
+vertical_alignment = 1
