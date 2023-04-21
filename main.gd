@@ -19,6 +19,7 @@ var onetime_plinkosdone = false
 var c_miss = Color(239, 157, 101)
 var c_late = Color(193, 202, 121)
 var c_done = Color(130, 173, 104)
+var winplay = true
 @onready var todo_list = $Todo_List/V
 @onready var done_list = $Done_List/V
 
@@ -45,7 +46,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if drop:
-		$Preview.global_position.x = get_global_mouse_position().x
+		$Preview.global_position.x = clamp(get_global_mouse_position().x, 1100, 1810)
 	if Input.is_action_just_pressed("Click"):
 		if plinko_count and drop:
 			var instance = plinko.instantiate()
@@ -55,7 +56,7 @@ func _process(delta):
 			plinko_count -= 1
 			$Click.play()
 			$Plinkocount/Label.text = "energy left: " + str(plinko_count)
-		else:  # if plinkos are out
+		elif not plinko_count:  # if plinkos are out
 			$Plinkocount/Label.text = "no energy left!"
 #			print("aaaaaa")
 #			print(todo_comp.size())
@@ -104,7 +105,12 @@ func _on_cell_landed(activity):
 		instance.activity = activity
 		done_list.add_child(instance)
 		done_comp.append(activity)
-		$Win.play()
+		if winplay:
+			winplay = false
+			$Win.play()
+			await get_tree().create_timer(.45).timeout
+			winplay = true
+			#print("played win")
 	pass
 
 
@@ -150,3 +156,4 @@ func _on_generate_pressed():
 func _on_info_pressed():
 	$Tips.show()
 	$Click.play()
+
