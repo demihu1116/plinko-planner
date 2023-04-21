@@ -1,6 +1,7 @@
 <p align="center"><img src="https://github.com/demihu1116/plinko-planner/blob/main/art/plinkotitle.png?raw=true"></p>
 
-### Plinko Planner is a minigame to simulate task management with ADHD.
+### Plinko Planner is a minigame to simulate task management with ADHD. [Play it here!](https://ibidemsz.itch.io/plinko-planner)
+
 Designed and developed by Demi Hu using Adobe Illustrator and Godot 4.
 
 ### About the concept
