@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cfqalwx2pvvfq"]
+[gd_scene load_steps=26 format=3 uid="uid://cfqalwx2pvvfq"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_1flcn"]
 [ext_resource type="Texture2D" uid="uid://mhhjb4b3tlb6" path="res://icon.svg" id="1_wkqpt"]
@@ -16,7 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://bnbsxpuausy3g" path="res://art/qst.png" id="12_ts5g2"]
 [ext_resource type="Texture2D" uid="uid://dq1h7mvu3gpll" path="res://art/qst2.png" id="13_o6s41"]
 [ext_resource type="PackedScene" uid="uid://bsejl3i375cc" path="res://tips.tscn" id="16_0bqwe"]
+[ext_resource type="AudioStream" uid="uid://cdlwkh3q4b7wv" path="res://other assets/gmae.wav" id="17_n5p44"]
 [ext_resource type="AudioStream" uid="uid://fsrcptukvasp" path="res://other assets/ui_click.mp3" id="17_qh568"]
+[ext_resource type="AudioStream" uid="uid://r86tieoq5t1f" path="res://other assets/bouncy_menu_loop.ogg" id="18_h42gn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lwsrb"]
 size = Vector2(801, 20)
@@ -549,11 +551,11 @@ position = Vector2(496, 112)
 texture = ExtResource("8_slvid")
 
 [node name="Label" type="Label" parent="Title"]
-offset_left = -440.0
+offset_left = -420.0
 offset_top = 48.0
-offset_right = 438.0
+offset_right = 458.0
 offset_bottom = 75.0
-text = "simulating task management under the ADHD mind. fun and spontaneity made frustrating."
+text = "simulating task management with the ADHD mind. fun and spontaneity made frustrating."
 label_settings = SubResource("LabelSettings_2r2am")
 
 [node name="Todo_List" type="Control" parent="."]
@@ -605,11 +607,11 @@ offset_bottom = 104.0
 theme_override_constants/separation = 90
 
 [node name="Info" type="TextureButton" parent="."]
-offset_left = 869.0
-offset_top = 92.0
-offset_right = 949.0
-offset_bottom = 172.0
-scale = Vector2(0.5, 0.5)
+offset_left = 28.9999
+offset_top = 31.0
+offset_right = 109.0
+offset_bottom = 111.0
+scale = Vector2(0.459, 0.459)
 texture_normal = ExtResource("12_ts5g2")
 texture_pressed = ExtResource("13_o6s41")
 texture_hover = ExtResource("13_o6s41")
@@ -638,10 +640,18 @@ text = "energy left:"
 label_settings = SubResource("LabelSettings_cqn3a")
 
 [node name="Tips" parent="." instance=ExtResource("16_0bqwe")]
-visible = false
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_qh568")
+volume_db = 5.583
+
+[node name="Win" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_n5p44")
+volume_db = -15.951
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_h42gn")
+volume_db = -22.366
 
 [connection signal="landed" from="Cells/Cell" to="." method="_on_cell_landed"]
 [connection signal="landed" from="Cells/Cell2" to="." method="_on_cell_landed"]

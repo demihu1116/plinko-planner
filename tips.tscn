@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bsejl3i375cc"]
+[gd_scene load_steps=7 format=3 uid="uid://bsejl3i375cc"]
 
 [ext_resource type="Script" path="res://tips.gd" id="1_ejafa"]
 [ext_resource type="Texture2D" uid="uid://c7ay7u8ri5onh" path="res://art/square.png" id="1_g8ndd"]
+[ext_resource type="Texture2D" uid="uid://pksqvdh107g8" path="res://art/x.png" id="3_8axvp"]
 [ext_resource type="AudioStream" uid="uid://fsrcptukvasp" path="res://other assets/ui_click.mp3" id="3_gi774"]
+[ext_resource type="Texture2D" uid="uid://d1oag2f3hxhb6" path="res://art/x1.png" id="4_p4hnc"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rywg6"]
 blend_mode = 3
@@ -30,13 +32,15 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("1_g8ndd")
 
-[node name="Close" type="Button" parent="."]
-modulate = Color(1, 1, 1, 0)
+[node name="Close" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 1336.0
-offset_top = 112.0
+offset_top = 136.0
 offset_right = 1392.0
-offset_bottom = 168.0
+offset_bottom = 217.0
+texture_normal = ExtResource("3_8axvp")
+texture_pressed = ExtResource("3_8axvp")
+texture_hover = ExtResource("4_p4hnc")
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_gi774")

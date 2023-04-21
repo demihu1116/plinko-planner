@@ -41,6 +41,7 @@ func _ready():
 		current_cell.get_node("L/Label").text = celltext[i]
 		
 	$Plinkocount/Label.text = "energy left: " + str(plinko_count)
+	$Music.play()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if drop:
@@ -52,7 +53,7 @@ func _process(delta):
 			instance.position = Vector2(get_global_mouse_position().x, 80)
 
 			plinko_count -= 1
-			
+			$Click.play()
 			$Plinkocount/Label.text = "energy left: " + str(plinko_count)
 		else:  # if plinkos are out
 			$Plinkocount/Label.text = "no energy left!"
@@ -69,11 +70,12 @@ func _process(delta):
 		if plinkosdone:
 			if todo_comp.size() == done_comp.size():
 				plinkosdone = false
-				await get_tree().create_timer(2).timeout
+				await get_tree().create_timer(0.5).timeout
 				dayended = true
 			
 		
 	if dayended:
+		$Click.play()
 		dayended = false	
 		#print(todo_comp)
 		#print(done_comp)
@@ -102,7 +104,7 @@ func _on_cell_landed(activity):
 		instance.activity = activity
 		done_list.add_child(instance)
 		done_comp.append(activity)
-		
+		$Win.play()
 	pass
 
 
@@ -141,7 +143,7 @@ func _on_generate_pressed():
 		todo_list.add_child(instance)
 		todo_comp.append(activities[act_index])
 		
-	await get_tree().create_timer(2).timeout
+	#await get_tree().create_timer(2).timeout
 	gen = false
 
 

@@ -16,6 +16,6 @@ func _on_body_entered(body):
 		tapped = true
 		$Tap.play()
 		print("tapped")
-		await get_tree().create_timer(0.05).timeout
+		#await get_tree().create_timer(0.05).timeout
 		tapped = false
 	
